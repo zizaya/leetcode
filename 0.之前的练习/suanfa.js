@@ -1699,8 +1699,8 @@ console.log(binarySearch(arr,10))//9 */
 
     console.log(`fxx今天吃<${lunchMeal[result3]}>，喝<${drink[result]}>，主食可以选择<${stapleFood[result2]}>`)
 }
-fxx() */
-
+fxx()
+ */
 
 /**
  * @param {number[]} nums
