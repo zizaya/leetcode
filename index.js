@@ -1,27 +1,22 @@
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
  */
-var permute = function(nums) {
-    let ans = []
-    const func1 = (i) =>{
-        let temp = []
-        //深拷贝nums
-        for(let index in nums){
-            if(index != i){
-                let temp = nums[index]
-                nums[index] = nums[i]
-                nums[i]  =temp
-            }
-            temp.push(nums)
-            
-        }
-        console.log(temp)
-       return temp 
+var addStrings = function(num1, num2) {
+    let length = num1.length<num2.length ? num1.length : num2.length
+    let total = 0
+    let loops = 1
+    let isAdd = 0
+    for(let i=length-1;i>=0;i--){
+        num1[i] = num1[i] ? num1[i] : 0
+        num2[i] = num2[i] ? num2[i] : 0
+        console.log(num1[i],num2[i])
+        let temp = (+num1[i] + +num2[i] + isAdd)%10
+        isAdd = (+num1[i] + +num2[i] +isAdd) >=10 ? 1 :0
+        total += temp*loops
+        loops *=10
     }
-    for(let i in nums){
-        ans.concat(func1(i))
-    }
-    return ans
+    console.log(total)
 };
-console.log(permute([1,2,3]))
+console.log(addStrings("11","123"))
